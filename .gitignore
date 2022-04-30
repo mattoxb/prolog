@@ -5,3 +5,5 @@ bench/runbench
 *.o
 *~
 *.swp
+.stack-work
+stack.yaml.lock

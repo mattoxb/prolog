@@ -1,0 +1,42 @@
+#+TITLE: Prolog Interpreter
+
+* Credits
+
+This interpreter is a fork of [[https://github.com/mfourne/prolog]], which itself is a fork
+of [[https://github.com/Erdwolf/prolog]].
+
+* Use
+
+I've added a very primitive REPL.  To use this, create a Prolog file somewhere,
+run =stack repl=, and then type =main=.
+
+It will ask you what file to load, and after that you can type in queries.
+
+** Sample run
+
+First create a file with the following content.  (It is included in this repo as
+=examples/syllogism.pl=
+
+#+begin_src prolog
+mortal(X) :- human(X).
+human(socrates).
+#+end_src
+
+Running it will look something like this:
+
+#+begin_src
+$ stack repl
+
+ .... lots of warning messages ....
+
+Ok, 11 modules loaded.
+Loaded GHCi configuration from /tmp/haskell-stack-ghci/b88c5e3b/ghci-script
+*Unifier Database Interpreter IsString Language.Prolog Language.Prolog.IsString Language.Prolog.Quote Parser Prolog Quote Syntax Unifier> main
+Prolog Interpreter.
+What file has the database? examples/syllogism.pl
+> mortal(Who)
+[[(Who,socrates)]]
+>
+#+end_src
+
+To get a token for CS 421, poke at the program a bit and then fill out the following form, *giving thoughtful feedback*.  [[https://forms.gle/igS2n7vcMFdfKSjAA]]
